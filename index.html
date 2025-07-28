@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Vivo Internet - Agenda Instalação</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="background"></div>
+    <!-- Logo topo -->
+    <div class="linha-flex">
+        <div class="bloco-esquerda">
+            <div class="titulo">
+                Vivo Internet - Agenda Instalação
+            </div>
+
+            <div class="comple1">
+                Informe o melhor dia da semana e período para instalação da sua internet. Agendaremos para primeira data disponível e vocÊ receberá, nesse número, a confirmação.
+            </div>
+
+        </div>
+
+        <div class="container bloco-central text-center">
+            <p class="mt-3">📲 Preencha o formulário abaixo e comece agora!<br>
+                Nosso time vai entrar em contato com você para explicar tudo.
+            </p>
+            <form
+                action="https://script.google.com/macros/s/AKfycbz73cgC3ClOKAm6un1afrXlyyX4dyIpe2EPCUCod3QRjfzIIpkeDbj57xL58O7VY0rZ/exec"
+                method="POST" class="text-start mt-4">
+                <input type="hidden" name="redirect" value="obrigado.html" />
+                <div class="mb-3">
+                    <label for="cnpj" class="form-label">CNPJ</label>
+                    <input type="text" class="form-control" id="cnpj" name="cnpj" placeholder="">
+                </div>
+                <div class="mb-3">
+                    <label for="estado" class="form-label">Estado</label>
+                    <select class="form-control" id="estado" name="estado" required>
+                        <option value="">Selecione um estado</option>
+                        <option value="AC">Acre (AC)</option>
+                        <option value="AL">Alagoas (AL)</option>
+                        <option value="AP">Amapá (AP)</option>
+                        <option value="AM">Amazonas (AM)</option>
+                        <option value="BA">Bahia (BA)</option>
+                        <option value="CE">Ceará (CE)</option>
+                        <option value="DF">Distrito Federal (DF)</option>
+                        <option value="ES">Espírito Santo (ES)</option>
+                        <option value="GO">Goiás (GO)</option>
+                        <option value="MA">Maranhão (MA)</option>
+                        <option value="MT">Mato Grosso (MT)</option>
+                        <option value="MS">Mato Grosso do Sul (MS)</option>
+                        <option value="MG">Minas Gerais (MG)</option>
+                        <option value="PA">Pará (PA)</option>
+                        <option value="PB">Paraíba (PB)</option>
+                        <option value="PR">Paraná (PR)</option>
+                        <option value="PE">Pernambuco (PE)</option>
+                        <option value="PI">Piauí (PI)</option>
+                        <option value="RJ">Rio de Janeiro (RJ)</option>
+                        <option value="RN">Rio Grande do Norte (RN)</option>
+                        <option value="RS">Rio Grande do Sul (RS)</option>
+                        <option value="RO">Rondônia (RO)</option>
+                        <option value="RR">Roraima (RR)</option>
+                        <option value="SC">Santa Catarina (SC)</option>
+                        <option value="SP">São Paulo (SP)</option>
+                        <option value="SE">Sergipe (SE)</option>
+                        <option value="TO">Tocantins (TO)</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="periodo" class="form-label">Periodo</label>
+                    <select class="form-control" id="periodo" name="periodo" required>
+                        <option value="">Selecione um periodo</option>
+                        <option value="Manhã">das 8:00 as 12hrs</option>
+                        <option value="Tarde">das 13:00 as 12hrs</option>
+                    </select>    
+                <div>
+                <div class="d-grid">
+                    <button type="submit" class="btn btn-primary btn-lg">Quero saber mais!</button>
+                </div>         
+                    <input type="hidden" id="latitude" name="latitude">
+                    <input type="hidden" id="longitude" name="longitude">
+            </form>
+        </div>
+    </div>
+
+    <div class="social-links mt-4">
+        <a href="https://www.instagram.com/goldempresas?igsh=MWc4ZHI4dXd4aXdhMg==" target="_blank" rel="noopener"
+            aria-label="Instagram" class="social-icon instagram">
+            <img src="imagens/instagram.png" alt="Instagram" />
+        </a>
+        <a href="https://www.linkedin.com/company/gold-empresas/posts/?feedView=all" target="_blank" rel="noopener"
+            aria-label="LinkedIn" class="social-icon linkedin">
+            <img src="imagens/linkedin.png" alt="LinkedIn" />
+        </a>
+        <a href="https://www.goldempresas.com.br" target="_blank" rel="noopener" aria-label="Site próprio"
+            class="social-icon site">
+            <img src="imagens/site.png" alt="Site" />
+        </a>
+    </div>
+
+
+    <img src="imagens/Gold_Preto.png" alt="Logo Gold" class="logo-superior">
+
+
+    <div class="logos-inferior">
+        <img src="imagens/VIVO_EMPRESAS_PRETO.png" alt="Logo Vivo Empresas" class="logo-direita">
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        window.onload = function () {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function (position) {
+                    document.getElementById('latitude').value = position.coords.latitude;
+                    document.getElementById('longitude').value = position.coords.longitude;
+                }, function (error) {
+                    console.warn("Geolocalização não permitida ou erro: ", error.message);
+                });
+            } else {
+                console.warn("Geolocalização não é suportada neste navegador.");
+            }
+        };
+    </script>
+    
+</body>
+
+</html>
