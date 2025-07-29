@@ -34,31 +34,32 @@
                 <input type="hidden" name="redirect" value="obrigado.html" />
                 <div class="mb-3">
                     <label for="cnpj" class="form-label">CNPJ</label>
-                    <input type="text" class="form-control" id="cnpj" name="cnpj" placeholder="">
+                    <input type="text" class="form-control" id="cnpj" name="cnpj" placeholder="Digite Seu CNPJ" pattern="\d{14}"
+                    minlength="14" maxlength="14" required title="Digite os 14 números do CNPJ, sem pontos, traços ou barras.">
                 </div>
                 <div class="mb-3">
                     <label for="dia" class="form-label">Dia sugerido para instalação</label>
                     <select class="form-control" id="dia" name="dia" required>
                         <option value="">Selecione um dia</option>
-                        <option value="Seg">Segunda Feira</option>
-                        <option value="Tet">Terça Feira</option>
-                        <option value="Qua">Quarta Feira</option>
-                        <option value="Qui">Quinta Feira</option>
-                        <option value="Sex">Sexta Feira</option>
-                        <option value="Sab">Sabado</option>
+                        <option value="Seg">Segunda-Feira</option>
+                        <option value="Ter">Terça-Feira</option>
+                        <option value="Qua">Quarta-Feira</option>
+                        <option value="Qui">Quinta-Feira</option>
+                        <option value="Sex">Sexta-Feira</option>
+                        <option value="Sab">Sábado</option>
                     </select>
                 </div>
                 <div class="mb-3">
                     <label for="periodo" class="form-label">Período sugerido</label>
                     <select class="form-control" id="periodo" name="periodo" required>
-                        <option value="">Selecione um periodo</option>
-                        <option value="Manhã">das 8:00 as 12hrs</option>
-                        <option value="Tarde">das 13:00 as 12hrs</option>
+                        <option value="">Selecione um período</option>
+                        <option value="Manhã">das 8:00 às 12hrs</option>
+                        <option value="Tarde">das 13:00 às 18hrs</option>
                     </select>
                 </div>
                 <div>
                     <div class="d-grid">
-                        <button type="submit" class="btn btn-primary btn-lg">Solicitar Agenda</button>
+                        <button type="submit" class="btn btn-primary btn-lg">Solicitar agendamento</button>
                     </div>
                     <div>
                         <input type="hidden" id="latitude" name="latitude">
