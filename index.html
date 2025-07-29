@@ -19,7 +19,8 @@
             </div>
 
             <div class="comple1">
-                Informe o melhor dia da semana e período para instalação da sua internet. Agendaremos para primeira data disponível e vocÊ receberá, nesse número, a confirmação.
+                Informe o melhor dia da semana e período para instalação da sua internet. Agendaremos para primeira data
+                disponível e vocÊ receberá, nesse número, a confirmação.
             </div>
 
         </div>
@@ -74,13 +75,16 @@
                         <option value="">Selecione um periodo</option>
                         <option value="Manhã">das 8:00 as 12hrs</option>
                         <option value="Tarde">das 13:00 as 12hrs</option>
-                    </select>    
+                    </select>
+                </div>
                 <div>
-                <div class="d-grid">
-                    <button type="submit" class="btn btn-primary btn-lg">Enviar</button>
-                </div>         
-                    <input type="hidden" id="latitude" name="latitude">
-                    <input type="hidden" id="longitude" name="longitude">
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-primary btn-lg">Enviar</button>
+                    </div>
+                    <div>
+                        <input type="hidden" id="latitude" name="latitude">
+                        <input type="hidden" id="longitude" name="longitude">
+                    </div>
             </form>
         </div>
     </div>
@@ -122,28 +126,28 @@
         // Desativa o botão de envio enquanto não tem localização
         const btn = document.querySelector('button[type="submit"]');
         btn.disabled = true;
-      
+
         function solicitarLocalizacao() {
-          if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(function (position) {
-              document.getElementById('latitude').value = position.coords.latitude;
-              document.getElementById('longitude').value = position.coords.longitude;
-      
-              // Libera o botão e remove o bloqueio
-              document.getElementById('bloqueio-localizacao').style.display = "none";
-              btn.disabled = false;
-            }, function (error) {
-              alert("⚠️ A localização é obrigatória para continuar. Por favor, ative o compartilhamento.");
-            });
-          } else {
-            alert("⚠️ Seu navegador não suporta geolocalização.");
-          }
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function (position) {
+                    document.getElementById('latitude').value = position.coords.latitude;
+                    document.getElementById('longitude').value = position.coords.longitude;
+
+                    // Libera o botão e remove o bloqueio
+                    document.getElementById('bloqueio-localizacao').style.display = "none";
+                    btn.disabled = false;
+                }, function (error) {
+                    alert("⚠️ A localização é obrigatória para continuar. Por favor, ative o compartilhamento.");
+                });
+            } else {
+                alert("⚠️ Seu navegador não suporta geolocalização.");
+            }
         }
-      
+
         window.onload = solicitarLocalizacao;
-      </script>
-      
-    
+    </script>
+
+
 </body>
 
 </html>
