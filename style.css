@@ -206,11 +206,17 @@ body {
     max-width: 600px;
     width: 100%;
     background: rgba(255, 255, 255, 0.8);
-    font-size: 0.95rem;
+    font-size: 1rem;
+    font-weight: bold;
     padding: 20px;
     border-radius: 14px;
     margin: 10px auto 0 auto; /* Esse centraliza horizontalmente */
     box-shadow: 0 0 80px rgba(0, 0, 0, 0.1);
+}
+
+.mt-3{
+    font-size: 1.5rem;
+    font-weight: bold;
 }
 
 .linha-flex {
